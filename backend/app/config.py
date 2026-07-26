@@ -1,4 +1,5 @@
 from pathlib import Path
+from typing import List, Union
 
 from pydantic_settings import BaseSettings
 
@@ -9,7 +10,7 @@ class Settings(BaseSettings):
     app_name: str = "FastAPI Shop"
     debug: bool = True
     database_url: str = f"sqlite:///{(BASE_DIR / 'shop.db').as_posix()}"
-    cors_origins: list = [
+    cors_origins: list = Union[List[str], str] = [
         "http://localhost:5173",
         "http://localhost:3000",
         "http://127.0.0.1:5173",

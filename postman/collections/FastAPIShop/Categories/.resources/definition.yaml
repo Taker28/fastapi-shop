@@ -1,0 +1,3 @@
+$kind: collection
+name: Categories
+description: 'Category-related endpoints'

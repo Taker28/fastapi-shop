@@ -1,0 +1,8 @@
+name: test
+values:
+  - key: base_url
+    value: 'http://localhost:8000'
+  - key: product_id
+    value: '1'
+  - key: category_id
+    value: '1'

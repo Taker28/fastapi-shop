@@ -1,0 +1,12 @@
+$kind: http-request
+name: Remove from Cart
+method: DELETE
+url: '{{base_url}}/api/cart/remove/{{product_id}}'
+order: 4000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {"cart": {"1": 1}}

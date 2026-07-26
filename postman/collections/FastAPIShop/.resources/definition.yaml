@@ -1,0 +1,3 @@
+$kind: collection
+name: FastAPIShop
+description: 'FastAPI Shop API collection covering products, categories, and cart operations.'

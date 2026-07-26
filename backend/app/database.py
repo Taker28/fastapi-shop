@@ -19,4 +19,7 @@ def get_db():
         db.close()
 
 def init_db():
+    # Import models so SQLAlchemy registers them before create_all runs.
+    from .models import Category, Product  # noqa: F401
+
     Base.metadata.create_all(bind=engine)

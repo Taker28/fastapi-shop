@@ -2,10 +2,9 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
-from backend.app.database import init_db
-from backend.app.routes import categories
 from .config import settings
-from .routes import product_router, category_router, cart_router
+from .database import init_db
+from .routes import cart_router, category_router, product_router
 
 app = FastAPI(
     title=settings.app_name,

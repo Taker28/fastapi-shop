@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 from typing import List, Optional
 from ..models.category import Category
-from ..schemes.category import CategoryCreate
+from ..schemas.category import CategoryCreate
 
 class CategoryRepository:
     def __init__(self, db: Session):

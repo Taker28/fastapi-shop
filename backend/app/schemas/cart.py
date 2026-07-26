@@ -10,8 +10,11 @@ class CartItemCreate(CartItemBase):
 
 class CartItemUpdate(BaseModel):
     product_id: Optional[int] = Field(..., description="Product ID")
-    quantity: Optional[int] = Field(, gt=0,
-                                    description="Quantity (must be greater than 0)")
+    quantity: Optional[int] = Field(
+        None,
+        gt=0,
+        description="Quantity (must be greater than 0)",
+    )
 
 class CartItem(BaseModel):
     product_id: int

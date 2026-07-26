@@ -1,8 +1,7 @@
 from sqlalchemy.orm import Session
 from typing import Dict
 from ..repositories.product_repository import ProductRepository
-from ..schemes.cart import CartResponse, CartItem, \
-                            CartItemCreate, CartItemUpdate
+from ..schemas.cart import CartResponse, CartItem, CartItemCreate, CartItemUpdate
 from fastapi import HTTPException, status
 
 

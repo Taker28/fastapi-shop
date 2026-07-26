@@ -9,12 +9,14 @@ import sys
 from pathlib import Path
 
 BACKEND_DIR = Path(__file__).resolve().parent
-if str(BACKEND_DIR) not in sys.path:
-    sys.path.insert(0, str(BACKEND_DIR))
+PROJECT_ROOT = BACKEND_DIR.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
-from app.database import SessionLocal, init_db
-from app.models.category import Category
-from app.models.product import Product
+from backend.app.config import settings
+from backend.app.database import SessionLocal, init_db
+from backend.app.models.category import Category
+from backend.app.models.product import Product
 
 
 def create_categories(db):
@@ -172,7 +174,7 @@ def seed_database():
     Создает таблицы, категории и товары.
     """
     print("🚀 Starting database seeding...")
-    db_path = Path("shop.db").resolve()
+    db_path = Path(settings.database_url.removeprefix("sqlite:///"))
     print(f"📍 Database file: {db_path}")
 
     # Инициализируем БД (создаем таблицы)

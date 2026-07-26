@@ -5,7 +5,12 @@
 Использует placeholder изображения с unsplash.com.
 """
 
+import sys
 from pathlib import Path
+
+BACKEND_DIR = Path(__file__).resolve().parent
+if str(BACKEND_DIR) not in sys.path:
+    sys.path.insert(0, str(BACKEND_DIR))
 
 from app.database import SessionLocal, init_db
 from app.models.category import Category
